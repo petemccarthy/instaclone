@@ -1,6 +1,7 @@
 import { Link, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
 import phone from './phone.png'
+import LoginPage from '../LoginPage/LoginPage'
 
 const LandingPage = () => {
   return (
@@ -12,7 +13,7 @@ const LandingPage = () => {
             <img src={phone} alt="phone" />
           </div>
           <div className="w-96 h-128 bg-slate-100 text-center">
-            Right Cointainer
+            <LoginPage />
           </div>
         </div>
       </main>
