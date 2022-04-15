@@ -13,9 +13,9 @@ generator client {
 // TODO: Please remove the following example:
 model User {
   id                  Int       @id @default(autoincrement())
-  fullName            String
+  fullName            String?
   email               String    @unique
-  username            String    @unique
+  username            String?   @unique
   hashedPassword      String
   salt                String
   resetToken          String?
