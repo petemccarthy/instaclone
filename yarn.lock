@@ -1799,7 +1799,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.12.13, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.14.8, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.17.8, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.5.0, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.9.2":
+"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.12.13, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.14.8, @babel/runtime@npm:^7.15.4, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.17.8, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.5.0, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.9.2":
   version: 7.17.9
   resolution: "@babel/runtime@npm:7.17.9"
   dependencies:
@@ -20601,6 +20601,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-final-form@npm:^6.5.9":
+  version: 6.5.9
+  resolution: "react-final-form@npm:6.5.9"
+  dependencies:
+    "@babel/runtime": ^7.15.4
+  peerDependencies:
+    final-form: ^4.20.4
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: b572645d88cb4fee95e9201ce00b623d6e3d8b19484dd844ddc63fb494d43d2e6fcd0c59b1cbad72c2c9ae5d39066bd450debc9cacfbd9a46e2c8195a09fa4eb
+  languageName: node
+  linkType: hard
+
 "react-focus-lock@npm:2.5.2":
   version: 2.5.2
   resolution: "react-focus-lock@npm:2.5.2"
@@ -21499,6 +21511,7 @@ __metadata:
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
     "@redwoodjs/core": 1.0.1
+    react-final-form: ^6.5.9
     react-icons: ^4.3.1
   languageName: unknown
   linkType: soft

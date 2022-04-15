@@ -1,9 +1,9 @@
 -- CreateTable
 CREATE TABLE "User" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    "fullName" TEXT NOT NULL,
+    "fullName" TEXT,
     "email" TEXT NOT NULL,
-    "username" TEXT NOT NULL,
+    "username" TEXT,
     "hashedPassword" TEXT NOT NULL,
     "salt" TEXT NOT NULL,
     "resetToken" TEXT,
