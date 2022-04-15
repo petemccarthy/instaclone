@@ -1,12 +1,11 @@
 import {
   Box,
   Button,
-  Checkbox,
+  Center,
   Container,
   Divider,
   FormControl,
   FormLabel,
-  Heading,
   HStack,
   Input,
   Stack,
@@ -15,28 +14,14 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 
+import Logo from 'src/components/Logo/Logo'
+import PasswordField from 'src/components/PasswordField/PasswordField'
+import FacebookButton from 'src/components/FacebookButton/FacebookButton'
+
 function SignupPage() {
   return (
-    <Container
-      maxW="lg"
-      py={{ base: '12', md: '24' }}
-      px={{ base: '0', sm: '8' }}
-    >
+    <Container w="md" py={{ base: '12', md: '24' }} px={{ base: '0', sm: '8' }}>
       <Stack spacing="8">
-        <Stack spacing="6">
-          <Logo />
-          <Stack spacing={{ base: '2', md: '3' }} textAlign="center">
-            <Heading size={useBreakpointValue({ base: 'xs', md: 'sm' })}>
-              Log in to your account
-            </Heading>
-            <HStack spacing="1" justify="center">
-              <Text color="muted">Don't have an account?</Text>
-              <Button variant="link" colorScheme="blue">
-                Sign up
-              </Button>
-            </HStack>
-          </Stack>
-        </Stack>
         <Box
           py={{ base: '0', sm: '8' }}
           px={{ base: '4', sm: '10' }}
@@ -45,33 +30,72 @@ function SignupPage() {
           borderRadius={{ base: 'none', sm: 'xl' }}
         >
           <Stack spacing="6">
-            <Stack spacing="5">
-              <FormControl>
-                <FormLabel htmlFor="email">Email</FormLabel>
-                <Input id="email" type="email" />
-              </FormControl>
-              <PasswordField />
-            </Stack>
-            <HStack justify="space-between">
-              <Checkbox defaultIsChecked>Remember me</Checkbox>
-              <Button variant="link" colorScheme="blue" size="sm">
-                Forgot password?
-              </Button>
-            </HStack>
-            <Stack spacing="6">
-              <Button variant="primary">Sign in</Button>
+            <Stack spacing="5" align={'center'}>
+              <Logo />
+              <Text
+                fontWeight={700}
+                textColor={'gray.400'}
+                textAlign={'center'}
+              >
+                Sign up to see photos and videos from your friends.
+              </Text>
+              <FacebookButton />
               <HStack>
-                <Divider />
+                <Divider variant={'solid'} />
                 <Text fontSize="sm" whiteSpace="nowrap" color="muted">
                   or continue with
                 </Text>
                 <Divider />
               </HStack>
-              <OAuthButtonGroup />
+              <FormControl>
+                <FormLabel htmlFor="email">Email</FormLabel>
+                <Input id="email" type="email" />
+                <FormLabel htmlFor="fullName" mt={3}>
+                  Full Name
+                </FormLabel>
+                <Input id="fullName" type="text" />
+                <FormLabel htmlFor="password" mt={3}>
+                  Password
+                </FormLabel>
+                <PasswordField id="password" />
+                <Stack spacing="6">
+                  <Button
+                    variant="primary"
+                    bg={'blue.500'}
+                    textColor={'white'}
+                    mt={4}
+                  >
+                    Sign up
+                  </Button>
+                </Stack>
+              </FormControl>
+              <Text
+                fontSize={'xs'}
+                textColor={'gray.500'}
+                fontWeight={'semibold'}
+                align={'center'}
+              >
+                By signing up, you agree to our Terms , Data Policy and Cookies
+                Policy .
+              </Text>
             </Stack>
           </Stack>
         </Box>
       </Stack>
+      <Box
+        py={{ base: '0', sm: '8' }}
+        px={{ base: '4', sm: '10' }}
+        bg={useBreakpointValue({ base: 'transparent', sm: 'bg-surface' })}
+        boxShadow={{ base: 'none', sm: useColorModeValue('md', 'md-dark') }}
+        borderRadius={{ base: 'none', sm: 'xl' }}
+      >
+        <HStack spacing="1" justify="center">
+          <Text color="muted">Already have an account?</Text>
+          <Button variant="link" colorScheme="blue">
+            Log in
+          </Button>
+        </HStack>
+      </Box>
     </Container>
   )
 }
