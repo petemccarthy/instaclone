@@ -142,9 +142,11 @@ function SignupPage() {
       >
         <HStack spacing="1" justify="center">
           <Text color="muted">Already have an account?</Text>
-          <Button variant="link" colorScheme="blue">
-            Log in
-          </Button>
+          <Link to={routes.landing()}>
+            <Button variant="link" colorScheme="blue">
+              Log in
+            </Button>
+          </Link>
         </HStack>
       </Box>
     </Container>

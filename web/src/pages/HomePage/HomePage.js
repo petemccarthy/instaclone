@@ -1,10 +1,10 @@
-import { Link, routes, navigate } from '@redwoodjs/router'
+import { routes, navigate } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
-import { useAuth } from '@redwoodjs/auth'
-import { useEffect } from 'react'
+import { useEffect, useContext } from 'react'
+import { AuthContext } from 'src/context/AuthContext'
 
 const HomePage = () => {
-  const { isAuthenticated, logOut } = useAuth()
+  const { isAuthenticated, logOut } = useContext(AuthContext)
   useEffect(() => {
     if (!isAuthenticated) {
       navigate(routes.landing())
