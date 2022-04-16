@@ -12,6 +12,7 @@ import { AuthContext } from 'src/context/AuthContext'
 
 const MenuToggle = () => {
   const { currentUser, logOut } = useContext(AuthContext)
+  console.log(currentUser)
   return (
     <Menu>
       <MenuButton
