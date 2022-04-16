@@ -7,8 +7,11 @@ import {
   MenuItem,
   MenuDivider,
 } from '@chakra-ui/react'
+import { useContext } from 'react'
+import { AuthContext } from 'src/context/AuthContext'
 
 const MenuToggle = () => {
+  const { currentUser, logOut } = useContext(AuthContext)
   return (
     <Menu>
       <MenuButton
@@ -20,17 +23,17 @@ const MenuToggle = () => {
       >
         <Avatar
           size={'md'}
-          src={
-            'https://images.unsplash.com/photo-149366643881-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'
-          }
-          name="Pete McCarthy"
+          // src={
+          //   'https://images.unsplash.com/photo-149366643881-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'
+          // }
+          // name={}
         />
       </MenuButton>
       <MenuList>
         <MenuItem>Profile</MenuItem>
 
         <MenuDivider />
-        <MenuItem>Log out</MenuItem>
+        <MenuItem onClick={() => logOut()}>Log out</MenuItem>
       </MenuList>
     </Menu>
   )
