@@ -2124,6 +2124,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@chakra-ui/icons@npm:^1.1.7":
+  version: 1.1.7
+  resolution: "@chakra-ui/icons@npm:1.1.7"
+  dependencies:
+    "@chakra-ui/icon": 2.0.5
+    "@types/react": ^17.0.15
+  peerDependencies:
+    "@chakra-ui/system": ">=1.0.0"
+    react: ">=16.8.6"
+  checksum: 68707c7512f8f5e39e7e8bfa3d2faa1be39733d6513732855ec5e48a058b05e3fbc2755f05f85f2f90e0e0579cc24abf20ac86b53aba14a405596eb06aca7e31
+  languageName: node
+  linkType: hard
+
 "@chakra-ui/image@npm:1.1.10":
   version: 1.1.10
   resolution: "@chakra-ui/image@npm:1.1.10"
@@ -6747,6 +6760,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/react@npm:^17.0.15":
+  version: 17.0.44
+  resolution: "@types/react@npm:17.0.44"
+  dependencies:
+    "@types/prop-types": "*"
+    "@types/scheduler": "*"
+    csstype: ^3.0.2
+  checksum: d83d6999582a17620ac208be392a1713f3d16acd6a0f0e4d5f661e43e35297eb05c89d67ea90e04fc1f1ebf92e7b6cc4353253bbee35ae1695aedf944b9af8dc
+  languageName: node
+  linkType: hard
+
 "@types/responselike@npm:^1.0.0":
   version: 1.0.0
   resolution: "@types/responselike@npm:1.0.0"
@@ -7575,6 +7599,13 @@ __metadata:
   bin:
     acorn: bin/acorn
   checksum: 8168e567c2f0b9fb7a418d2651b4b614326a0814b4937ebddee0f5e5e25ddd6320aec0c20d3a67efd97a02d836cc7f9e5c84befe3daeeea68ed89a48ee8f7a5d
+  languageName: node
+  linkType: hard
+
+"add@npm:^2.0.6":
+  version: 2.0.6
+  resolution: "add@npm:2.0.6"
+  checksum: 6b21d5f2e58cf5e15d56cc6f9ebce04f04f4c33ae25f09d600ddacf8df00036ba521f17feb1b3f81307b7c6d2ef0bed8b511a0f86f062eb90c2f909b48b588ae
   languageName: node
   linkType: hard
 
@@ -24493,6 +24524,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "web@workspace:web"
   dependencies:
+    "@chakra-ui/icons": ^1.1.7
     "@chakra-ui/react": ^1.8.8
     "@emotion/react": ^11
     "@emotion/styled": ^11
@@ -24500,6 +24532,7 @@ __metadata:
     "@redwoodjs/forms": 1.0.1
     "@redwoodjs/router": 1.0.1
     "@redwoodjs/web": 1.0.1
+    add: ^2.0.6
     autoprefixer: ^10.4.4
     framer-motion: ^4
     postcss: ^8.4.12
@@ -24507,7 +24540,9 @@ __metadata:
     prop-types: 15.8.1
     react: 17.0.2
     react-dom: 17.0.2
+    react-icons: ^4.3.1
     tailwindcss: ^3.0.24
+    yarn: ^1.22.18
   languageName: unknown
   linkType: soft
 
@@ -25327,6 +25362,16 @@ __metadata:
     y18n: ^5.0.5
     yargs-parser: ^21.0.0
   checksum: 0a96b9e6310014d333b8b0486e14f86a1e6a9a91763537ab27768df8ea48c0887b1b332ece1629e57d788770f95e096254b1f846004ad5cfc066b03d781e59ae
+  languageName: node
+  linkType: hard
+
+"yarn@npm:^1.22.18":
+  version: 1.22.18
+  resolution: "yarn@npm:1.22.18"
+  bin:
+    yarn: bin/yarn.js
+    yarnpkg: bin/yarn.js
+  checksum: d68e6876313b53733e2d4e8fb673717dbc1aa4a8a2608144116b38548e7cc8dab324cbcba7b9f429fd6883b67234238b1a6bdddabd2818da3b934bd228af32b4
   languageName: node
   linkType: hard
 
