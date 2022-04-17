@@ -7,7 +7,7 @@ const Logo = () => {
     alt: 'facebook logo',
   }
   return (
-    <Box w={44}>
+    <Box w={24}>
       <Image src={property.src} alt={property.alt} />
     </Box>
   )

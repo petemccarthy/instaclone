@@ -1,24 +1,38 @@
-import { Box, Flex, HStack, useColorModeValue } from '@chakra-ui/react'
+import {
+  Box,
+  Flex,
+  HStack,
+  useColorModeValue,
+  Container,
+} from '@chakra-ui/react'
 
 import MenuToggle from '../MenuToggle/MenuToggle'
 
 export default function NavBar({ logo, currentUser }) {
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
-        <Flex
-          h={16}
-          alignItems={'center'}
-          justifyContent={'space-between'}
-          py={8}
-        >
-          <HStack spacing={8} alignItems={'center'} mt={2}>
-            {logo}
-          </HStack>
-          <Flex alignItems={'center'}>
-            <MenuToggle currentUser={currentUser} />
+      <Box
+        bg={'white'}
+        px={4}
+        w={'full'}
+        borderBottom={'1px'}
+        borderBottomColor={'gray.300'}
+      >
+        <Container maxW={'container.lg'}>
+          <Flex
+            h={16}
+            alignItems={'center'}
+            justifyContent={'space-between'}
+            py={8}
+          >
+            <HStack spacing={8} alignItems={'center'} mt={2}>
+              <Box w={'30px'}>{logo}</Box>
+            </HStack>
+            <Flex alignItems={'center'}>
+              <MenuToggle currentUser={currentUser} />
+            </Flex>
           </Flex>
-        </Flex>
+        </Container>
       </Box>
     </>
   )
