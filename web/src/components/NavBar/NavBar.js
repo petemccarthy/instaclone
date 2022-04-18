@@ -1,10 +1,5 @@
-import {
-  Box,
-  Flex,
-  HStack,
-  useColorModeValue,
-  Container,
-} from '@chakra-ui/react'
+import { Box, Flex, HStack, Container } from '@chakra-ui/react'
+import { routes, Link } from '@redwoodjs/router'
 
 import MenuToggle from '../MenuToggle/MenuToggle'
 
@@ -26,7 +21,9 @@ export default function NavBar({ logo, currentUser }) {
             py={8}
           >
             <HStack spacing={8} alignItems={'center'} mt={2}>
-              <Box w={'30px'}>{logo}</Box>
+              <Box w={'30px'}>
+                <Link to={routes.home()}>{logo}</Link>
+              </Box>
             </HStack>
             <Flex alignItems={'center'}>
               <MenuToggle currentUser={currentUser} />

@@ -1,4 +1,5 @@
 import {
+  Box,
   Avatar,
   Button,
   Menu,
@@ -9,6 +10,7 @@ import {
 } from '@chakra-ui/react'
 import { useContext } from 'react'
 import { AuthContext } from 'src/context/AuthContext'
+import { Link, routes } from '@redwoodjs/router'
 
 const MenuToggle = () => {
   const { currentUser, logOut } = useContext(AuthContext)
@@ -31,7 +33,9 @@ const MenuToggle = () => {
         />
       </MenuButton>
       <MenuList>
-        <MenuItem>Profile</MenuItem>
+        <Link to={routes.profile()}>
+          <MenuItem>Profile</MenuItem>
+        </Link>
 
         <MenuDivider />
         <MenuItem onClick={() => logOut()}>Log out</MenuItem>
