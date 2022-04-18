@@ -1,19 +1,25 @@
-import { Link, routes } from '@redwoodjs/router'
+import { routes, navigate } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
+import { useEffect, useContext } from 'react'
+import Logo from 'src/components/Logo/Logo'
+import NavBar from 'src/components/NavBar/NavBar'
+import { AuthContext } from 'src/context/AuthContext'
+import { Container, VStack } from '@chakra-ui/react'
 
 const HomePage = () => {
+  const { isAuthenticated } = useContext(AuthContext)
+  useEffect(() => {
+    if (!isAuthenticated) {
+      navigate(routes.landing())
+    }
+  }, [isAuthenticated])
   return (
     <>
       <MetaTags title="Home" description="Home page" />
-
-      <h1>HomePage</h1>
-      <p>
-        Find me in <code>./web/src/pages/HomePage/HomePage.js</code>
-      </p>
-      <p>
-        My default route is named <code>home</code>, link to me with `
-        <Link to={routes.home()}>Home</Link>`
-      </p>
+      <VStack bg={'whitesmoke'} h={'350px'}>
+        <NavBar logo={<Logo />} />
+        <Container maxW={'container.lg'}>Page content here</Container>
+      </VStack>
     </>
   )
 }

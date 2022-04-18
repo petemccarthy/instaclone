@@ -13,11 +13,26 @@
     ]
   },
   "dependencies": {
+    "@chakra-ui/icons": "^1.1.7",
+    "@redwoodjs/auth": "1.0.1",
     "@redwoodjs/forms": "1.0.1",
     "@redwoodjs/router": "1.0.1",
     "@redwoodjs/web": "1.0.1",
+    "add": "^2.0.6",
     "prop-types": "15.8.1",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-icons": "^4.3.1",
+    "yarn": "^1.22.18"
+  },
+  "devDependencies": {
+    "@chakra-ui/react": "^1.8.8",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "autoprefixer": "^10.4.4",
+    "framer-motion": "^4",
+    "postcss": "^8.4.12",
+    "postcss-loader": "^6.2.1",
+    "tailwindcss": "^3.0.24"
   }
 }
