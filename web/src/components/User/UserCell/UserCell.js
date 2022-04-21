@@ -1,23 +1,29 @@
-import ProfileSettings from '../ProfileSettings/ProfileSettings'
+import User from 'src/components/User/User'
 
 export const QUERY = gql`
   query FindUserById($id: Int!) {
     user: user(id: $id) {
+      id
       fullName
       email
       username
       photoUrl
+      hashedPassword
+      salt
+      resetToken
+      resetTokenExpiresAt
     }
   }
 `
+
 export const Loading = () => <div>Loading...</div>
 
-export const Empty = () => <div>Empty</div>
+export const Empty = () => <div>User not found</div>
 
 export const Failure = ({ error }) => (
-  <div style={{ color: 'red' }}>Error: {error.message}</div>
+  <div className="rw-cell-error">{error.message}</div>
 )
 
 export const Success = ({ user }) => {
-  return <ProfileSettings user={user} />
+  return <User user={user} />
 }

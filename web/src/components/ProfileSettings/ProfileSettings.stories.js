@@ -6,7 +6,7 @@ const profileSettings = {
 }
 
 export const generated = () => {
-  return <ProfileSettings profileSettings={profileSettings} />
+  return <ProfileSettings user={profileSettings} />
 }
 
 export default { title: 'Components/ProfileSettings' }

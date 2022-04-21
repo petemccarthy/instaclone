@@ -1,6 +1,6 @@
 // Define your own mock data here:
 export const standard = () => ({
-  profileSettings: {
+  user: {
     id: 42,
     email: 'petefromsf@gmail.com',
     fullName: 'Pete McCarthy',

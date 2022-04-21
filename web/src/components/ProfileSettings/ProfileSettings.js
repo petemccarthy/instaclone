@@ -17,9 +17,9 @@ import { SmallCloseIcon } from '@chakra-ui/icons'
 import { useState } from 'react'
 import { Link, routes } from '@redwoodjs/router'
 
-const ProfileSettings = ({ profileSettings }) => {
-  const [email, setEmail] = useState(profileSettings.email)
-  const [fullName, setFullName] = useState(profileSettings.fullName)
+const ProfileSettings = ({ user }) => {
+  const [email, setEmail] = useState(user.email)
+  const [fullName, setFullName] = useState(user.fullName)
   return (
     <Flex
       minH={'100vh'}
