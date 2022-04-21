@@ -20,6 +20,7 @@ import { Link, routes } from '@redwoodjs/router'
 const ProfileSettings = ({ user }) => {
   const [email, setEmail] = useState(user.email)
   const [fullName, setFullName] = useState(user.fullName)
+  const [photoUrl, setPhotoUrl] = useState(user.photoUrl)
   return (
     <Flex
       minH={'100vh'}
@@ -44,16 +45,18 @@ const ProfileSettings = ({ user }) => {
           <FormLabel>User Icon</FormLabel>
           <Stack direction={['column', 'row']} spacing={6}>
             <Center>
-              <Avatar size="xl" src="https://bit.ly/sage-adebayo">
-                <AvatarBadge
-                  as={IconButton}
-                  size="sm"
-                  rounded="full"
-                  top="-10px"
-                  colorScheme="red"
-                  aria-label="remove Image"
-                  icon={<SmallCloseIcon />}
-                />
+              <Avatar size="xl" src={photoUrl} name={fullName}>
+                {photoUrl && (
+                  <AvatarBadge
+                    as={IconButton}
+                    size="sm"
+                    rounded="full"
+                    top="-10px"
+                    colorScheme="red"
+                    aria-label="remove Image"
+                    icon={<SmallCloseIcon />}
+                  />
+                )}
               </Avatar>
             </Center>
             <Center w="full">

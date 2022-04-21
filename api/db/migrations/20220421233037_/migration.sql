@@ -4,6 +4,7 @@ CREATE TABLE "User" (
     "fullName" TEXT,
     "email" TEXT NOT NULL,
     "username" TEXT,
+    "photoUrl" TEXT,
     "hashedPassword" TEXT NOT NULL,
     "salt" TEXT NOT NULL,
     "resetToken" TEXT,

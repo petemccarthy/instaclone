@@ -14,7 +14,6 @@ import { Link, routes } from '@redwoodjs/router'
 
 const MenuToggle = () => {
   const { currentUser, logOut } = useContext(AuthContext)
-  console.log(currentUser)
   return (
     <Menu>
       <MenuButton
