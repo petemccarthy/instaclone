@@ -85,16 +85,18 @@ const ProfileSettings = ({ user }) => {
           />
         </FormControl>
         <Stack spacing={6} direction={['column', 'row']}>
-          <Button
-            bg={'red.400'}
-            color={'white'}
-            w="full"
-            _hover={{
-              bg: 'red.500',
-            }}
-          >
-            Cancel
-          </Button>
+          <Link to={routes.profile()}>
+            <Button
+              bg={'red.400'}
+              color={'white'}
+              w="full"
+              _hover={{
+                bg: 'red.500',
+              }}
+            >
+              Cancel
+            </Button>
+          </Link>
           <Button
             bg={'blue.400'}
             color={'white'}
