@@ -17,10 +17,11 @@ import { SmallCloseIcon } from '@chakra-ui/icons'
 import { useState } from 'react'
 import { Link, routes } from '@redwoodjs/router'
 
-const ProfileSettings = ({ user }) => {
+const ProfileSettings = ({ user, onSave }) => {
   const [email, setEmail] = useState(user.email)
   const [fullName, setFullName] = useState(user.fullName)
   const [photoUrl, setPhotoUrl] = useState(user.photoUrl)
+
   return (
     <Flex
       minH={'100vh'}
@@ -98,6 +99,9 @@ const ProfileSettings = ({ user }) => {
             </Button>
           </Link>
           <Button
+            onClick={() => {
+              onSave({ email, fullName, photoUrl }, user.id)
+            }}
             bg={'blue.400'}
             color={'white'}
             w="full"
