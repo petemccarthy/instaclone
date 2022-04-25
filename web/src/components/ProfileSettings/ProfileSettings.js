@@ -11,16 +11,32 @@ import {
   AvatarBadge,
   IconButton,
   Center,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
 } from '@chakra-ui/react'
+
 import { SmallCloseIcon } from '@chakra-ui/icons'
 
 import { useState } from 'react'
 import { Link, routes } from '@redwoodjs/router'
 
+import { PickerInline } from 'filestack-react'
+
 const ProfileSettings = ({ user, onSave }) => {
   const [email, setEmail] = useState(user.email)
   const [fullName, setFullName] = useState(user.fullName)
   const [photoUrl, setPhotoUrl] = useState(user.photoUrl)
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const onFileUpload = (res) => {
+    setPhotoUrl(res.filesUploaded[0].url)
+    onClose()
+  }
 
   return (
     <Flex
@@ -56,12 +72,15 @@ const ProfileSettings = ({ user, onSave }) => {
                     colorScheme="red"
                     aria-label="remove Image"
                     icon={<SmallCloseIcon />}
+                    onClick={() => setPhotoUrl('')}
                   />
                 )}
               </Avatar>
             </Center>
             <Center w="full">
-              <Button w="full">Change Icon</Button>
+              <Button w="full" onClick={onOpen}>
+                Change Icon
+              </Button>
             </Center>
           </Stack>
         </FormControl>
@@ -113,6 +132,26 @@ const ProfileSettings = ({ user, onSave }) => {
           </Button>
         </Stack>
       </Stack>
+      <Modal isOpen={isOpen} onClose={onClose} size={'xl'}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Choose Profile Pic</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <PickerInline
+              apikey={process.env.REDWOOD_ENV_FILESTACK_API_KEY}
+              pickerOptions={{
+                accept: 'image/*',
+                maxFiles: 1,
+                transformations: { circle: true, force: true },
+              }}
+              onSuccess={onFileUpload}
+            />
+          </ModalBody>
+
+          <ModalFooter></ModalFooter>
+        </ModalContent>
+      </Modal>
     </Flex>
   )
 }
