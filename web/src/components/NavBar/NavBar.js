@@ -1,18 +1,15 @@
 import { Box, Flex, HStack, Container } from '@chakra-ui/react'
 import { routes, Link } from '@redwoodjs/router'
-import { IconButton } from '@chakra-ui/react'
-import {
-  RiHomeLine,
-  RiHomeFill,
-  RiHeartLine,
-  RiHeartFill,
-} from 'react-icons/ri'
-
+import { IconButton, useDisclosure } from '@chakra-ui/react'
+import { RiHomeLine, RiHomeFill } from 'react-icons/ri'
 import { BsPlusSquare, BsPlusSquareFill } from 'react-icons/bs'
 
 import MenuToggle from '../MenuToggle/MenuToggle'
+import FilePickerModal from '../FilePickerModal/FilePickerModal'
+import FavoriteMenu from '../FavoriteMenu/FavoriteMenu'
 
 export default function NavBar({ logo, currentUser }) {
+  const { isOpen, onOpen, onClose } = useDisclosure()
   let iconStyles = {
     width: 'white',
     fontSize: '1.8em',
@@ -61,18 +58,13 @@ export default function NavBar({ logo, currentUser }) {
                   _hover={{ bg: 'white' }}
                   _focus={{ bg: 'white' }}
                   _active={{ bg: 'white' }}
+                  onClick={onOpen}
                 />
-                <IconButton
-                  aria-label="Make favorite"
-                  bg={'white'}
-                  icon={<RiHeartLine style={iconStyles} />}
-                  _hover={{ bg: 'white' }}
-                  _focus={{ bg: 'white' }}
-                  _active={{ bg: 'white' }}
-                />
+                <FavoriteMenu />
                 <MenuToggle currentUser={currentUser} />
               </HStack>
             </Flex>
+            <FilePickerModal isOpen={isOpen} onClose={onClose} />
           </Flex>
         </Container>
       </Box>
