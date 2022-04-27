@@ -9,7 +9,6 @@ export const QUERY = gql`
       id
       fullName
       email
-      username
       photoUrl
     }
   }
@@ -21,7 +20,6 @@ const UPDATE_USER_MUTATION = gql`
       id
       fullName
       email
-      username
       photoUrl
       hashedPassword
       salt
