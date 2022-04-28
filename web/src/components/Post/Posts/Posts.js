@@ -54,7 +54,6 @@ const checkboxInputTag = (checked) => {
 }
 
 const PostsList = ({ posts }) => {
-  console.log(posts)
   const [deletePost] = useMutation(DELETE_POST_MUTATION, {
     onCompleted: () => {
       toast.success('Post deleted')
