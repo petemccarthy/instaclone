@@ -9,6 +9,7 @@ export const QUERY = gql`
       caption
       userId
       createdAt
+      imageUrl
     }
   }
 `

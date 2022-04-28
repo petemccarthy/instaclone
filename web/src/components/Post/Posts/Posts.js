@@ -54,6 +54,7 @@ const checkboxInputTag = (checked) => {
 }
 
 const PostsList = ({ posts }) => {
+  console.log(posts)
   const [deletePost] = useMutation(DELETE_POST_MUTATION, {
     onCompleted: () => {
       toast.success('Post deleted')
@@ -79,6 +80,7 @@ const PostsList = ({ posts }) => {
       <table className="rw-table">
         <thead>
           <tr>
+            <th>Image</th>
             <th>Id</th>
             <th>Caption</th>
             <th>User id</th>
@@ -89,6 +91,15 @@ const PostsList = ({ posts }) => {
         <tbody>
           {posts.map((post) => (
             <tr key={post.id}>
+              <td>
+                <a href={post.imageUrl} rel="noreferrer" target="_blank">
+                  <img
+                    src={post.imageUrl}
+                    alt="this"
+                    style={{ maxWidth: '50px' }}
+                  />
+                </a>
+              </td>
               <td>{truncate(post.id)}</td>
               <td>{truncate(post.caption)}</td>
               <td>{truncate(post.userId)}</td>

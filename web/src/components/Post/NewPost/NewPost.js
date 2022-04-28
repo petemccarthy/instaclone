@@ -2,6 +2,8 @@ import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
 import { navigate, routes } from '@redwoodjs/router'
 import PostForm from 'src/components/Post/PostForm'
+import { AuthContext } from 'src/context/AuthContext'
+import { useContext } from 'react'
 
 const CREATE_POST_MUTATION = gql`
   mutation CreatePostMutation($input: CreatePostInput!) {
@@ -12,6 +14,7 @@ const CREATE_POST_MUTATION = gql`
 `
 
 const NewPost = () => {
+  const { currentUser } = useContext(AuthContext)
   const [createPost, { loading, error }] = useMutation(CREATE_POST_MUTATION, {
     onCompleted: () => {
       toast.success('Post created')
@@ -23,7 +26,10 @@ const NewPost = () => {
   })
 
   const onSave = (input) => {
-    const castInput = Object.assign(input, { userId: parseInt(input.userId) })
+    const castInput = {
+      ...input,
+      userId: currentUser.id,
+    }
     createPost({ variables: { input: castInput } })
   }
 

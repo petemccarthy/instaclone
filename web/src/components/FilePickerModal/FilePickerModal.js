@@ -10,8 +10,8 @@ import {
 import { PickerInline } from 'filestack-react'
 
 const FilePickerModal = ({
-  accept,
-  maxFiles,
+  accept = 'image/*',
+  maxFiles = 1,
   header,
   transformations,
   handleSuccess,

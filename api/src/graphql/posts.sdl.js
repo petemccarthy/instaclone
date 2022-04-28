@@ -2,7 +2,7 @@ export const schema = gql`
   type Post {
     id: Int!
     caption: String
-    images: [Image]!
+    imageUrl: String
     user: User!
     userId: Int!
     createdAt: DateTime!
@@ -16,11 +16,13 @@ export const schema = gql`
   input CreatePostInput {
     caption: String
     userId: Int!
+    imageUrl: String
   }
 
   input UpdatePostInput {
     caption: String
     userId: Int
+    imageUrl: String
   }
 
   type Mutation {

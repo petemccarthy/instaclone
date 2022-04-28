@@ -2,6 +2,7 @@ import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
 import { navigate, routes } from '@redwoodjs/router'
 
+
 import PostForm from 'src/components/Post/PostForm'
 
 export const QUERY = gql`
@@ -11,6 +12,7 @@ export const QUERY = gql`
       caption
       userId
       createdAt
+      imageUrl
     }
   }
 `
@@ -21,6 +23,7 @@ const UPDATE_POST_MUTATION = gql`
       caption
       userId
       createdAt
+      imageUrl
     }
   }
 `
