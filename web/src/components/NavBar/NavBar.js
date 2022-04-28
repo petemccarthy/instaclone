@@ -25,6 +25,7 @@ export default function NavBar({ logo, currentUser }) {
         w={'full'}
         borderBottom={'1px'}
         borderBottomColor={'gray.300'}
+        position={'fixed'}
       >
         <Container maxW={'container.lg'}>
           <Flex

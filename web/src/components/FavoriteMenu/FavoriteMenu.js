@@ -36,7 +36,7 @@ const FavoriteMenu = () => {
         _hover={{ bg: 'white' }}
         _focus={{ bg: 'white' }}
         _active={{ bg: 'white' }}
-        color={'black.500'}
+        color={'black.400'}
       />
       <MenuList>
         <MenuItem>Item 1</MenuItem>
